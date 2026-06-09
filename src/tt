@@ -1,0 +1,159 @@
+import "./form.css";
+import image from "../assets/transparent.png";
+import { MdEmail } from "react-icons/md";
+import { FaUser } from "react-icons/fa6";
+import { IoMdLock } from "react-icons/io";
+import { FaApple } from "react-icons/fa";
+import { BiLogoFacebookCircle, BiLogoGoogle } from "react-icons/bi";
+import {
+  doCreateUserWithEmailAndPassword,
+  doGoogleSignIN,
+} from "../firebase/auth";
+import { useState } from "react";
+
+export default function Forms() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setCofirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(true);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    try {
+      await doCreateUserWithEmailAndPassword(email, password);
+    } catch (error: any) {
+      setError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  async function handleGoogleSignup (){
+    setError("");
+    try {
+      await doGoogleSignIN();
+    } catch (err: any) {
+      setError(err.message);
+    }
+  }
+  
+  return (
+    <div className="container">
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <div className="image-container">
+            <img src={image} alt="" />
+          </div>
+          <div className="text-container">
+            <span>Your journey starts here</span>
+            <span>Take the first step</span>
+          </div>
+
+          <div className="full-input-container">
+            <div className="input-container">
+              <FaUser color="color: rgba(0, 0, 0, 0.486)" />
+              <input
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                placeholder="Username"
+                required
+              />
+            </div>
+
+            <div className="input-container">
+              <MdEmail />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div className="input-container">
+              <IoMdLock />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <div className="input-container">
+              <IoMdLock />
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setCofirmPassword(e.target.value)}
+                placeholder="Confirm password"
+                required
+              />
+            </div>
+            {error && <p className="error-message">{error}</p>}
+
+            <div className="button-container">
+              <button type="submit" >
+               Sign up
+              </button>
+            </div>
+
+            <div className="divider">
+              <span>or</span>
+            </div>
+          </div>
+
+          <div className="iconic">
+            <BiLogoFacebookCircle size={30} />
+            <FaApple size={30} />
+            <a onClick={handleGoogleSignup}>
+              <BiLogoGoogle size={30} />
+            </a>
+          </div>
+
+          <div className="already">
+            <p>
+              Already have an account? <span>Sign in</span>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+import { Routes, Route } from "react-router-dom";
+import Loggin from "./component/login";
+import Forms from "./component/form";
+import AccountCreated from "./component/formsuccess";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Forms />} />
+      <Route path="/Loggin" element={<Loggin />} />
+      <Route path="/account-created" element={<AccountCreated />} />
+    </Routes>
+  );
+}
+
+export default App;
+

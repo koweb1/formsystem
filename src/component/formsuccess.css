@@ -1,0 +1,87 @@
+.success-container {
+  width: 100%;
+  height: 100vh;
+  background: #edf4fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+.success-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  padding: 20px 20px;
+}
+.success-icon {
+  border-radius: 50%;
+  border: 2px solid green;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: green;
+  margin: 20px 0 15px;
+}
+h1 {
+  margin-bottom: 2px;
+}
+h1 span {
+  color: green;
+  font-weight: 500;
+}
+p {
+  color: rgba(0, 0, 0, 0.425);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.1px;
+}
+.successfull-created-profile {
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  background: #edf4fa;
+  width: 80%;
+  padding: 10px 10px;
+  margin-top: 20px;
+}
+ .success-profile{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 128, 0, 0.116);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.success-info span{
+    font-weight: 500;
+    font-size: 14px;
+}
+.success-info p{
+    font-size:14px ;
+    margin-top: 3px;
+}
+.success-button {
+    width: 80%;
+    margin: 25px 0 20px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(255, 166, 0, 0.836);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* centers the text */
+    position: relative;       /* anchor for the icon */
+}
+
+.success-button svg {
+    position: absolute;
+    right: 15px;              /* icon pinned to the right */
+}

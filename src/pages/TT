@@ -1,0 +1,58 @@
+import RightNavBar from "../component/navbarleft"
+import { MdOutlineEdit } from "react-icons/md";
+import { LuLogOut, LuCalendarDays } from "react-icons/lu";
+import TopNavBar from "../component/navbartop"
+import image from "../assets/cool-profile-pictures-fake-smile.avif"
+import gmail from "../assets/gmail-new.jpg"
+export default function Profile (){
+    return (
+      <div className="profile-container">
+        <div className="profile-second-container ">
+          <TopNavBar />
+          <div className="profile-body">
+            <RightNavBar />
+            <div className="profile-body-right">
+              <h1>
+                Welcome back,<span>Oguntoyinbo</span> 👋
+              </h1>
+              <p>Here's your account overview.</p>
+
+              <div className="body-right-bottom">
+                <div className="body-right-image">
+                  <img src={image} />
+                </div>
+                <h2>Korede</h2>
+                <div className="gmail-container">
+                  <div className="gmail-package">
+                    <img src={gmail} />
+                  </div>
+                  <span>Oguntoyinbokorede@gmail.com</span>
+                </div>
+
+                <div className="profile-icons-container">
+                  <div className="profile-calendar">
+                    <LuCalendarDays />
+                  </div>
+                  <div className="profile-icons">
+                    <span className="account-created">Account created</span>
+                    <span>May 2026</span>
+                  </div>
+                </div>
+
+                <div className="profile-buttons">
+                  <button>
+                    {" "}
+                    <MdOutlineEdit size={18}/> Edit profile
+                  </button>
+                </div>
+                <div className="profile-final-button">
+                  <LuLogOut />
+                  <span>Logout</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+}

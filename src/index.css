@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  
+}
+.profile-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background:#F3F5F9 ;
+  display: grid;
+  grid-template-columns: 230px 3fr; 
+  grid-template-rows: 1fr 4.6fr ;
+  grid-template-areas:"left top" "left bottom" ;
+  padding: 0 40px ;
+  grid-column-gap: 20px;
+}
+
+.top{
+  grid-area:top ;
+}
+.left{
+  background-color: yellow;
+   grid-area:left;
+   padding: 0 28px;
+   height: 80vh;
+   background:#EEF1F5 ;
+   
+}
+.bottom{
+  background-color: green;
+  grid-area:bottom ;
+  height: 80vh;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.profile-body-right{
+  margin-top: 16px;
+  text-align: center;
+}
+.profile-body-right h1{
+  font-size: 25px;
+  margin-bottom:8px ;
+  word-spacing: 3px;
+}
+.profile-body-right h1 span{
+  padding-left: 8px;
+  color:rgba(0, 0, 255, 0.87) ;
+}
+.profile-body-right p{
+  color: rgba(0, 0, 0, 0.596);
+  font-size: 15px;
+  font-weight: 500;
+}
+.body-right-bottom{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.body-right-image{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.body-right-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit:cover;
+}
+.body-right-bottom  h2{
+  color:rgba(0, 0, 0, 0.856) ;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.body-right-bottom .gmail-container{
+  display: flex;
+  gap: 10px;
+  margin: 8px 0;
+}
+.gmail-package{
+  width: 20px;
+  height: 20px;
+}
+ .gmail-package img{
+  width: 100%;
+}
+.gmail-container span{
+  color:rgba(0, 0, 0, 0.699) ;
+  font-size: 15px;
+}
+.profile-icons-container{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+.profile-icons-container .profile-calendar{
+  color:rgba(0, 0, 255, 0.87) ;
+}
+.profile-icons-container .profile-icons{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.profile-icons span{
+  font-weight: 600;
+  font-size: 15px;
+}
+ .profile-icons .account-created {
+  color:rgba(0, 0, 0, 0.596);
+  font-weight: 500;
+}
+.profile-buttons{
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 20px;
+}
+.profile-buttons button{
+  width: 100%;
+  padding: 0.8em 0;
+  background-color:rgba(0, 0, 255, 0.87) ;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.profile-final-button{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: red;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}

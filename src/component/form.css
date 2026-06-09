@@ -1,0 +1,130 @@
+.container {
+  width: 100%;
+  height: auto;
+  background: #edf4fa;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.form-container {
+  background: #ffffff;
+  margin-top: 70px;
+  width: 40%;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  padding: 40px 35px;
+   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+
+}
+.image-container {
+  width: 170px;
+  height: 160px;
+}
+.image-container img{
+  width: 100%;
+  height: 100%;
+}
+.text-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: -25px;
+}
+.text-container span{
+  font-size: 20px;
+  font-weight: 600;
+  color: hsla(0, 0%, 0%, 0.849);
+}
+
+.full-input-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+  padding:0 30px;
+}
+.full-input-container .input-container{
+  background: #edf4fa;
+  padding: 0 0 0 20px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+.full-input-container .input-container input{
+  width: 100%;
+  height:100%;
+  outline: none;
+  padding-left: 10px;
+  border: none;
+  font-size: 15px;
+  background: #edf4fa;
+}
+.input-container input::placeholder{
+  font-size: 14px;
+  padding-left: -14px;
+}
+.button-container{
+  width: 100%;
+  height: 45px;
+  margin-top: 20px;
+}
+.button-container button{
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  border: none;
+  background:#243A5E ;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.button-container button:hover{
+  background:#243a5ece ;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  border-radius: 2px ;
+  background: rgba(0, 0, 0, 0.253);
+}
+
+.iconic{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.already p{
+  color: rgba(0, 0, 0, 0.486);
+  
+}
+.already p span{
+  text-decoration: underline;
+  cursor: pointer;
+}
